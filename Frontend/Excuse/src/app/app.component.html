@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GF Excuse Generator</title>
+</head>
+<body>
+  <h1>💘 Girlfriend Excuse Generator</h1>
+
+ <section id="generate">
+  <select [(ngModel)]="generateMood">
+    <option value="" disabled selected>Select Mood</option>
+    <option *ngFor="let mood of moods" [value]="mood">{{ mood }}</option>
+  </select>
+
+  <select [(ngModel)]="generateTone">
+    <option value="" disabled selected>Select Tone</option>
+    <option *ngFor="let tone of tones" [value]="tone">{{ tone }}</option>
+    
+  </select>
+
+  <button mat-raised-button color="primary" id="generateBtn" (click)="generateExcuse()">Generate Excuse</button>
+
+  <textarea id="text" placeholder="Your excuse..." [value]="generatedExcuse" readonly></textarea>
+
+  <!-- <div id="result" class="card">{{ generatedExcuse }}</div> -->
+</section>
+
+
+  <section id="add">
+    <h2>Add New Excuse</h2>
+     <select [(ngModel)]="excuse.mood" name="addMood">
+  <option value="" disabled selected>Select Mood</option>
+  <option *ngFor="let mood of moods" [value]="mood">{{ mood }}</option>
+</select>
+     <select [(ngModel)]="excuse.tone" name="addTone">
+  <option value="" disabled selected>Select Tone</option>
+  <option *ngFor="let tone of tones" [value]="tone">{{ tone }}</option>
+</select>
+<textarea [(ngModel)]="excuse.text" placeholder="Enter excuse..." name="excuseText"></textarea>
+    <button mat-raised-button color="accent" id="addBtn">Submit</button>
+  </section>
+
+</body>
+</html>

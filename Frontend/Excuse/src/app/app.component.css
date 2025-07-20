@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  height: 100vh;
+  background-color:rgb(201, 201, 244);
+  font-family: Arial;
+  text-align: center;
+}
+.card {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 8px;
+}
+select, textarea {
+  border-radius: 20px;  
+  display: block;
+  margin: 10px auto;
+  padding: 8px;
+  width: 80%;
+}
+h1{
+  margin: 0;
+}
