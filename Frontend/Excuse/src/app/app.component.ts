@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   tone: '',
   text: ''
 };
- generatedExcuse: string = '';
+ generatedExcuse: string= '';
   generateMood: string = '';
   generateTone: string = '';
 
@@ -57,10 +57,10 @@ fetchExcuses() {
   if (filtered.length > 0) {
     // Choose a random excuse from the filtered list
     const randomIndex = Math.floor(Math.random() * filtered.length);
-    this.generatedExcuse = filtered[randomIndex].text;
+    this.generatedExcuse = filtered.map(e => e.text).join('\n');
   } else {
     this.generatedExcuse = 'No excuse found for the selected mood or tone.';
-  }
+    }
 }
 
 }
