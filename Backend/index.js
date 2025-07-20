@@ -2,10 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');  
 
 const app = express();
+const cors = require('cors');
+app.use(cors());
 app.use(express.json()); // allows parsing JSON request bodies
-app.use(cors({
-  origin: 'http://localhost:4200'   // Angular default port
-}));
 const PORT = 3000;
 
 // Start server
