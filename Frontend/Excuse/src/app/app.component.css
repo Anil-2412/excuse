@@ -17,6 +17,14 @@ select, textarea {
   padding: 8px;
   width: 80%;
 }
+textarea {
+  border-radius: 20px;  
+  display: block;
+  margin: 10px auto;
+  padding: 8px;
+  width: 80%;
+  height:100px;
+}
 h1{
   margin: 0;
 }

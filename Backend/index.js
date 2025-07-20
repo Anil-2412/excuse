@@ -50,3 +50,17 @@ app.post('/api/excuses', async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 });
+// Delete an excuse by ID
+app.delete('/api/excuses/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const deletedExcuse = await Excuse.findByIdAndDelete(id);
+    if (!deletedExcuse) {
+      return res.status(404).json({ message: 'Excuse not found' });
+    }
+    res.json({ message: 'Excuse deleted successfully', deletedExcuse });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
